@@ -1,217 +1,501 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SAT Practice History — Mockup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Practice Tests</title>
+
 <style>
-{box-sizing:border-box}
-body{margin:0;background:#f1f7fb;color:#101820;font-family:Arial,Helvetica,sans-serif}
-header{max-width:1320px;margin:0 auto;padding:22px 26px 18px}
-h1{font-size:34px;line-height:1.15;margin:0;font-weight:750;color:#171c20}
-.disclaimer{max-width:1320px;margin:0 auto 18px;padding:0 26px}
-.disclaimer div{background:#fff4d8;border:1px solid #e3c777;border-left:5px solid #b68119;padding:10px 13px;font-size:13px;color:#5e491b}
-main{max-width:1320px;margin:0 auto;padding:0 26px 34px}
-.cards{display:flex;flex-flow:row nowrap;gap:22px;align-items:stretch;overflow-x:auto;overflow-y:hidden;padding:2px 2px 18px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#8aa6ba #dce7ee;-webkit-overflow-scrolling:touch}
-.card{background:white;border:1px solid #d4dfe6;border-radius:19px;overflow:hidden;box-shadow:0 4px 9px #0c2e481c;display:flex;flex:0 0 334px;flex-direction:column;min-height:620px;scroll-snap-align:start}
-.cardtop{background:#06466b;color:white;padding:15px 19px;display:flex;align-items:center;justify-content:flex-start}
-.sat{font-size:30px;font-weight:750;letter-spacing:-1px}
-.blueband{background:#0873b4;color:white;padding:8px 19px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:bold}
-.blueband .practice{font-size:18px}
-.blueband time{font-size:13px;white-space:nowrap}
-.scorearea{background:#f0f7fb;text-align:center;padding:26px 12px 25px}
-.scorelabel{font-size:15px;font-weight:bold;margin-bottom:3px}
-.total{font-size:72px;line-height:1.12;font-weight:750;letter-spacing:-2px;color:#05090d}
-.range{font-size:16px;color:#40576a;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px;margin-top:9px}
-.sections{padding:4px 19px 0}
-.section{padding:11px 0 8px;border-bottom:1px solid #d7dfe5;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.section:last-child{border-bottom:0}
-.sectionname{font-size:18px;font-weight:500}
-.sectionrange{font-size:15px;margin-top:3px}
-.sectionnum{font-size:29px;font-weight:500}
-.actions{padding:18px 19px 20px;display:grid;gap:8px}
-button{font:700 15px Arial;cursor:pointer}
-.detailbtn{background:#ffda00;border:1px solid #171717;border-radius:28px;padding:13px 12px;color:#050505}
-.detailbtn:hover{background:#f3cd00}
-.linkbtn{background:white;border:1px solid #222;border-radius:28px;padding:12px;color:#111}
-.more{background:white;border:0;text-decoration:underline;padding:9px;color:#111;font-size:15px}
-.details{display:none;margin:0 19px 18px;padding:13px;background:#f7fafc;border:1px solid #d9e2e9;border-radius:9px;font-size:13px}
-.details.open{display:block}
-.details h3{margin:0 0 9px;color:#06466b;font-size:15px}
-.skill{margin:10px 0}
-.skilltop{display:flex;justify-content:space-between;gap:8px}
-.bar{height:7px;background:#dfe8ee;margin-top:5px;border-radius:6px;overflow:hidden}
-.bar span{display:block;height:100%;background:#0873b4}
-footer{max-width:1320px;margin:auto;padding:0 26px 25px;color:#627282;font-size:11px}
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:#f1f7fb;
+color:#101820;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+max-width:1320px;
+margin:auto;
+padding:22px 26px 18px;
+}
+
+h1{
+font-size:34px;
+margin:0;
+color:#171c20;
+}
+
+.disclaimer{
+max-width:1320px;
+margin:0 auto 18px;
+padding:0 26px;
+}
+
+.disclaimer div{
+background:#fff4d8;
+border:1px solid #e3c777;
+border-left:5px solid #b68119;
+padding:10px 13px;
+font-size:13px;
+color:#5e491b;
+}
+
+main{
+max-width:1320px;
+margin:auto;
+padding:0 26px 34px;
+}
+
+.cards{
+display:flex;
+flex-flow:row nowrap;
+gap:22px;
+overflow-x:auto;
+overflow-y:hidden;
+padding:2px 2px 18px;
+scroll-snap-type:x mandatory;
+scrollbar-width:thin;
+scrollbar-color:#8aa6ba #dce7ee;
+-webkit-overflow-scrolling:touch;
+}
+
+.card{
+background:white;
+border:1px solid #d4dfe6;
+border-radius:19px;
+overflow:hidden;
+box-shadow:0 4px 9px #0c2e481c;
+display:flex;
+flex:0 0 334px;
+flex-direction:column;
+min-height:620px;
+scroll-snap-align:start;
+}
+
+.cardtop{
+background:#06466b;
+color:white;
+padding:15px 19px;
+}
+
+.sat{
+font-size:30px;
+font-weight:750;
+letter-spacing:-1px;
+}
+
+.blueband{
+background:#0873b4;
+color:white;
+padding:8px 19px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+font-weight:bold;
+}
+
+.practice{
+font-size:18px;
+}
+
+.blueband time{
+font-size:13px;
+white-space:nowrap;
+}
+
+.scorearea{
+background:#f0f7fb;
+text-align:center;
+padding:26px 12px 25px;
+}
+
+.scorelabel{
+font-size:15px;
+font-weight:bold;
+margin-bottom:3px;
+}
+
+.total{
+font-size:72px;
+line-height:1.12;
+font-weight:750;
+letter-spacing:-2px;
+color:#05090d;
+}
+
+.range{
+font-size:16px;
+color:#40576a;
+text-decoration:underline;
+text-decoration-style:dotted;
+text-underline-offset:4px;
+margin-top:9px;
+}
+
+.sections{
+padding:4px 19px 0;
+}
+
+.section{
+padding:11px 0 8px;
+border-bottom:1px solid #d7dfe5;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+}
+
+.section:last-child{
+border-bottom:0;
+}
+
+.sectionname{
+font-size:18px;
+}
+
+.sectionrange{
+font-size:15px;
+margin-top:3px;
+}
+
+.sectionnum{
+font-size:29px;
+}
+
+.actions{
+padding:18px 19px 20px;
+display:grid;
+gap:8px;
+}
+
+button{
+font:700 15px Arial;
+cursor:pointer;
+}
+
+.detailbtn{
+background:#ffda00;
+border:1px solid #171717;
+border-radius:28px;
+padding:13px 12px;
+color:#050505;
+}
+
+.detailbtn:hover{
+background:#f3cd00;
+}
+
+.linkbtn{
+background:white;
+border:1px solid #222;
+border-radius:28px;
+padding:12px;
+color:#111;
+}
+
+.more{
+background:white;
+border:0;
+text-decoration:underline;
+padding:9px;
+color:#111;
+font-size:15px;
+}
+
+.details{
+display:none;
+margin:0 19px 18px;
+padding:13px;
+background:#f7fafc;
+border:1px solid #d9e2e9;
+border-radius:9px;
+font-size:13px;
+}
+
+.details.open{
+display:block;
+}
+
+.details h3{
+margin:0 0 9px;
+color:#06466b;
+font-size:15px;
+}
+
+.skill{
+margin:10px 0;
+}
+
+.skilltop{
+display:flex;
+justify-content:space-between;
+gap:8px;
+}
+
+.bar{
+height:7px;
+background:#dfe8ee;
+margin-top:5px;
+border-radius:6px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:#0873b4;
+}
+
+footer{
+max-width:1320px;
+margin:auto;
+padding:0 26px 25px;
+color:#627282;
+font-size:11px;
+}
+
 @media(max-width:450px){
-.card{flex-basis:min(86vw,334px)}
+.card{
+flex-basis:86vw;
+min-height:0;
+}
 header{padding:20px 16px 15px}
 h1{font-size:29px}
 .disclaimer{padding:0 16px}
 main{padding:0 16px 28px}
-.card{min-height:0}
 }
 </style>
 </head>
+
 <body>
-<header><h1>SAT Practice Tests</h1></header>
+
+<header>
+<h1>SAT Practice Tests</h1>
+</header>
 
 
 <main>
-<div class="cards" id="cards"></div>
-</main>
+<div class="cards">
 
-<script>
-const tests=[
-{
-n:6,
-date:"November 25, 2026",
-total:1240,
-rw:620,
-math:620,
-skills:[
-["Information and Ideas",70],
-["Craft and Structure",72],
-["Expression of Ideas",78],
-["Standard English Conventions",74],
-["Algebra",70],
-["Advanced Math",66],
-["Problem-Solving and Data Analysis",76],
-["Geometry and Trigonometry",68]
-]
-},
-{
-n:5,
-date:"November 25, 2026",
-total:1190,
-rw:590,
-math:600,
-skills:[
-["Information and Ideas",62],
-["Craft and Structure",68],
-["Expression of Ideas",74],
-["Standard English Conventions",70],
-["Algebra",66],
-["Advanced Math",58],
-["Problem-Solving and Data Analysis",72],
-["Geometry and Trigonometry",64]
-]
-},
-{
-n:4,
-date:"September 7, 2026",
-total:1200,
-rw:590,
-math:610,
-skills:[
-["Information and Ideas",66],
-["Craft and Structure",63],
-["Expression of Ideas",72],
-["Standard English Conventions",68],
-["Algebra",70],
-["Advanced Math",64],
-["Problem-Solving and Data Analysis",73],
-["Geometry and Trigonometry",67]
-]
-},
-{
-n:7,
-date:"June 5, 2026",
-total:1160,
-rw:570,
-math:590,
-skills:[
-["Information and Ideas",60],
-["Craft and Structure",64],
-["Expression of Ideas",69],
-["Standard English Conventions",66],
-["Algebra",65],
-["Advanced Math",61],
-["Problem-Solving and Data Analysis",70],
-["Geometry and Trigonometry",63]
-]
-},
-{
-n:4,
-date:"July 24, 2025",
-total:1060,
-rw:530,
-math:530,
-skills:[
-["Information and Ideas",54],
-["Craft and Structure",58],
-["Expression of Ideas",62],
-["Standard English Conventions",60],
-["Algebra",57],
-["Advanced Math",52],
-["Problem-Solving and Data Analysis",63],
-["Geometry and Trigonometry",56]
-]
-}
-];
-
-function card(t,i){
-const breakdown=a=>a.map(([name,p])=>`
-<div class="skill">
-<div class="skilltop"><span>${name}</span><b>${p}%</b></div>
-<div class="bar"><span style="width:${p}%"></span></div>
-</div>
-`).join("");
-
-return `
+<!-- PRACTICE 6 -->
 <article class="card">
 <div class="cardtop"><div class="sat">SAT</div></div>
-
 <div class="blueband">
-<span class="practice">PRACTICE ${t.n}</span>
-<time>${t.date}</time>
+<span class="practice">PRACTICE 6</span>
+<time>November 25, 2026</time>
 </div>
-
 <div class="scorearea">
 <div class="scorelabel">TOTAL SCORE</div>
-<div class="total">${t.total}</div>
+<div class="total">1240</div>
 <div class="range">400-1600</div>
 </div>
-
 <div class="sections">
 <div class="section">
-<div>
-<div class="sectionname">Reading and Writing</div>
-<div class="sectionrange">200-800</div>
+<div><div class="sectionname">Reading and Writing</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">620</div>
 </div>
-<div class="sectionnum">${t.rw}</div>
-</div>
-
 <div class="section">
-<div>
-<div class="sectionname">Math</div>
-<div class="sectionrange">200-800</div>
-</div>
-<div class="sectionnum">${t.math}</div>
+<div><div class="sectionname">Math</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">620</div>
 </div>
 </div>
-
 <div class="actions">
-<button class="detailbtn" onclick="toggleDetails(${i})">Score Details</button>
-<button class="linkbtn" onclick="toggleDetails(${i})">View Skill Breakdown ↗</button>
-<button class="more" onclick="toggleDetails(${i})">☷ Explore Performance</button>
+<button class="detailbtn" onclick="toggleDetails('d1')">Score Details</button>
+<button class="linkbtn" onclick="toggleDetails('d1')">View Skill Breakdown ↗</button>
+<button class="more" onclick="toggleDetails('d1')">☷ Explore Performance</button>
 </div>
-
-<div class="details" id="details-${i}">
+<div class="details" id="d1">
 <h3>Reading and Writing</h3>
-${breakdown(t.skills.slice(0,4))}
-<h3 style="margin-top:15px">Math</h3>
-${breakdown(t.skills.slice(4))}
+<div class="skill"><div class="skilltop"><span>Information and Ideas</span><b>70%</b></div><div class="bar"><span style="width:70%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Craft and Structure</span><b>72%</b></div><div class="bar"><span style="width:72%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Expression of Ideas</span><b>78%</b></div><div class="bar"><span style="width:78%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Standard English Conventions</span><b>74%</b></div><div class="bar"><span style="width:74%"></span></div></div>
+<h3>Math</h3>
+<div class="skill"><div class="skilltop"><span>Algebra</span><b>70%</b></div><div class="bar"><span style="width:70%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Advanced Math</span><b>66%</b></div><div class="bar"><span style="width:66%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Problem-Solving and Data Analysis</span><b>76%</b></div><div class="bar"><span style="width:76%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Geometry and Trigonometry</span><b>68%</b></div><div class="bar"><span style="width:68%"></span></div></div>
 </div>
 </article>
-`;
-}
 
-function toggleDetails(i){
-document.getElementById("details-"+i).classList.toggle("open");
-}
+<!-- PRACTICE 5 -->
+<article class="card">
+<div class="cardtop"><div class="sat">SAT</div></div>
+<div class="blueband">
+<span class="practice">PRACTICE 5</span>
+<time>November 25, 2026</time>
+</div>
+<div class="scorearea">
+<div class="scorelabel">TOTAL SCORE</div>
+<div class="total">1190</div>
+<div class="range">400-1600</div>
+</div>
+<div class="sections">
+<div class="section">
+<div><div class="sectionname">Reading and Writing</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">590</div>
+</div>
+<div class="section">
+<div><div class="sectionname">Math</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">600</div>
+</div>
+</div>
+<div class="actions">
+<button class="detailbtn" onclick="toggleDetails('d2')">Score Details</button>
+<button class="linkbtn" onclick="toggleDetails('d2')">View Skill Breakdown ↗</button>
+<button class="more" onclick="toggleDetails('d2')">☷ Explore Performance</button>
+</div>
+<div class="details" id="d2">
+<h3>Reading and Writing</h3>
+<div class="skill"><div class="skilltop"><span>Information and Ideas</span><b>62%</b></div><div class="bar"><span style="width:62%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Craft and Structure</span><b>68%</b></div><div class="bar"><span style="width:68%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Expression of Ideas</span><b>74%</b></div><div class="bar"><span style="width:74%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Standard English Conventions</span><b>70%</b></div><div class="bar"><span style="width:70%"></span></div></div>
+<h3>Math</h3>
+<div class="skill"><div class="skilltop"><span>Algebra</span><b>66%</b></div><div class="bar"><span style="width:66%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Advanced Math</span><b>58%</b></div><div class="bar"><span style="width:58%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Problem-Solving and Data Analysis</span><b>72%</b></div><div class="bar"><span style="width:72%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Geometry and Trigonometry</span><b>64%</b></div><div class="bar"><span style="width:64%"></span></div></div>
+</div>
+</article>
 
-document.getElementById("cards").innerHTML=tests.map(card).join("");
+<!-- PRACTICE 4 - SEPTEMBER 2026 -->
+<article class="card">
+<div class="cardtop"><div class="sat">SAT</div></div>
+<div class="blueband">
+<span class="practice">PRACTICE 4</span>
+<time>September 7, 2026</time>
+</div>
+<div class="scorearea">
+<div class="scorelabel">TOTAL SCORE</div>
+<div class="total">1200</div>
+<div class="range">400-1600</div>
+</div>
+<div class="sections">
+<div class="section">
+<div><div class="sectionname">Reading and Writing</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">590</div>
+</div>
+<div class="section">
+<div><div class="sectionname">Math</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">610</div>
+</div>
+</div>
+<div class="actions">
+<button class="detailbtn" onclick="toggleDetails('d3')">Score Details</button>
+<button class="linkbtn" onclick="toggleDetails('d3')">View Skill Breakdown ↗</button>
+<button class="more" onclick="toggleDetails('d3')">☷ Explore Performance</button>
+</div>
+<div class="details" id="d3">
+<h3>Reading and Writing</h3>
+<div class="skill"><div class="skilltop"><span>Information and Ideas</span><b>66%</b></div><div class="bar"><span style="width:66%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Craft and Structure</span><b>63%</b></div><div class="bar"><span style="width:63%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Expression of Ideas</span><b>72%</b></div><div class="bar"><span style="width:72%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Standard English Conventions</span><b>68%</b></div><div class="bar"><span style="width:68%"></span></div></div>
+<h3>Math</h3>
+<div class="skill"><div class="skilltop"><span>Algebra</span><b>70%</b></div><div class="bar"><span style="width:70%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Advanced Math</span><b>64%</b></div><div class="bar"><span style="width:64%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Problem-Solving and Data Analysis</span><b>73%</b></div><div class="bar"><span style="width:73%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Geometry and Trigonometry</span><b>67%</b></div><div class="bar"><span style="width:67%"></span></div></div>
+</div>
+</article>
+
+<!-- PRACTICE 7 -->
+<article class="card">
+<div class="cardtop"><div class="sat">SAT</div></div>
+<div class="blueband">
+<span class="practice">PRACTICE 7</span>
+<time>June 5, 2026</time>
+</div>
+<div class="scorearea">
+<div class="scorelabel">TOTAL SCORE</div>
+<div class="total">1160</div>
+<div class="range">400-1600</div>
+</div>
+<div class="sections">
+<div class="section">
+<div><div class="sectionname">Reading and Writing</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">570</div>
+</div>
+<div class="section">
+<div><div class="sectionname">Math</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">590</div>
+</div>
+</div>
+<div class="actions">
+<button class="detailbtn" onclick="toggleDetails('d4')">Score Details</button>
+<button class="linkbtn" onclick="toggleDetails('d4')">View Skill Breakdown ↗</button>
+<button class="more" onclick="toggleDetails('d4')">☷ Explore Performance</button>
+</div>
+<div class="details" id="d4">
+<h3>Reading and Writing</h3>
+<div class="skill"><div class="skilltop"><span>Information and Ideas</span><b>60%</b></div><div class="bar"><span style="width:60%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Craft and Structure</span><b>64%</b></div><div class="bar"><span style="width:64%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Expression of Ideas</span><b>69%</b></div><div class="bar"><span style="width:69%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Standard English Conventions</span><b>66%</b></div><div class="bar"><span style="width:66%"></span></div></div>
+<h3>Math</h3>
+<div class="skill"><div class="skilltop"><span>Algebra</span><b>65%</b></div><div class="bar"><span style="width:65%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Advanced Math</span><b>61%</b></div><div class="bar"><span style="width:61%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Problem-Solving and Data Analysis</span><b>70%</b></div><div class="bar"><span style="width:70%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Geometry and Trigonometry</span><b>63%</b></div><div class="bar"><span style="width:63%"></span></div></div>
+</div>
+</article>
+
+<!-- PRACTICE 4 - JULY 2025 -->
+<article class="card">
+<div class="cardtop"><div class="sat">SAT</div></div>
+<div class="blueband">
+<span class="practice">PRACTICE 4</span>
+<time>July 24, 2025</time>
+</div>
+<div class="scorearea">
+<div class="scorelabel">TOTAL SCORE</div>
+<div class="total">1060</div>
+<div class="range">400-1600</div>
+</div>
+<div class="sections">
+<div class="section">
+<div><div class="sectionname">Reading and Writing</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">530</div>
+</div>
+<div class="section">
+<div><div class="sectionname">Math</div><div class="sectionrange">200-800</div></div>
+<div class="sectionnum">530</div>
+</div>
+</div>
+<div class="actions">
+<button class="detailbtn" onclick="toggleDetails('d5')">Score Details</button>
+<button class="linkbtn" onclick="toggleDetails('d5')">View Skill Breakdown ↗</button>
+<button class="more" onclick="toggleDetails('d5')">☷ Explore Performance</button>
+</div>
+<div class="details" id="d5">
+<h3>Reading and Writing</h3>
+<div class="skill"><div class="skilltop"><span>Information and Ideas</span><b>54%</b></div><div class="bar"><span style="width:54%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Craft and Structure</span><b>58%</b></div><div class="bar"><span style="width:58%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Expression of Ideas</span><b>62%</b></div><div class="bar"><span style="width:62%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Standard English Conventions</span><b>60%</b></div><div class="bar"><span style="width:60%"></span></div></div>
+<h3>Math</h3>
+<div class="skill"><div class="skilltop"><span>Algebra</span><b>57%</b></div><div class="bar"><span style="width:57%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Advanced Math</span><b>52%</b></div><div class="bar"><span style="width:52%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Problem-Solving and Data Analysis</span><b>63%</b></div><div class="bar"><span style="width:63%"></span></div></div>
+<div class="skill"><div class="skilltop"><span>Geometry and Trigonometry</span><b>56%</b></div><div class="bar"><span style="width:56%"></span></div></div>
+</div>
+</article>
+
+</div>
+</main>
+
+
+<script>
+function toggleDetails(id){
+const panel=document.getElementById(id);
+panel.classList.toggle("open");
+}
 </script>
+
 </body>
 </html>
